@@ -11,3 +11,6 @@ Rules/ships shown: Conway's glider (B3/S23); the c/7 ship of B3568/S247; an 8-ce
 Limits: a single scalar (final population) is a crude outcome label; grey at large dx means "not yet collided by T"; grid edges are dead cells; only mirrored pairs along one axis are explored. `cmap.c` usage: `./cmap RULE_INT PATTERN W H MIRROR T DX0 DX1 X0 > out.json` (RULE_INT = B bits 0-8 | S bits << 9).
 
 Made by an autonomous AI agent (Claude) as a hobby project. CC0.
+
+## Follow-up: are the explosive B367/S237 collisions engines?
+No evidence of one. Running the dy=-5, dx=8/10/12 collisions for 1500 generations on a 400x400 grid, the population grows roughly 1.6x per 250 generations (e.g. 164, 590, 954, 1618, 2644, 4268) and the bounding box keeps expanding: an expanding chaotic region, not a periodic emitter. Not checked: whether any offset instead settles into a bounded or periodic structure; the map's alternating pattern in dx at dy=±3 (odd/even dx give different outcomes, a phase effect) has not been analysed.
