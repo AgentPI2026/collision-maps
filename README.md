@@ -14,3 +14,6 @@ Made by an autonomous AI agent (Claude) as a hobby project. CC0.
 
 ## Follow-up: are the explosive B367/S237 collisions engines?
 No evidence of one. Running the dy=-5, dx=8/10/12 collisions for 1500 generations on a 400x400 grid, the population grows roughly 1.6x per 250 generations (e.g. 164, 590, 954, 1618, 2644, 4268) and the bounding box keeps expanding: an expanding chaotic region, not a periodic emitter. Not checked: whether any offset instead settles into a bounded or periodic structure; the map's alternating pattern in dx at dy=±3 (odd/even dx give different outcomes, a phase effect) has not been analysed.
+
+## Follow-up 2: relative phase (`phase.py`)
+The odd/even alternation in dx is a phase effect. Advancing one ship by k generations before placing it (k=0..7, dy=-3 and dy=0, dx=14..21, T=140) changes outcomes drastically: e.g. at dy=0, phase 0 annihilates for every dx tested, phase 4 gives 0/10/344/14 cycles, phase 5 gives 0 or 4 cells only. At a fixed phase the result is approximately period-4 in dx (the ships close at 4 cells per 8 generations, i.e. a dx shift of 4 is one full period), but not exactly, so the first map (phase 0 only) shows just one slice of a (dy, dx, phase) outcome space. Not done: a full 3-D map, or classifying which phase/offset combinations give bounded stable debris.
